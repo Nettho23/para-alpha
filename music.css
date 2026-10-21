@@ -1,0 +1,23 @@
+.music-invitation-wrap { margin: 23px auto 0; text-align: center; }
+.music-invitation { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 9px 4px; border: 0; border-bottom: 1px solid #a7ad95; background: transparent; color: #46573d; font: italic 16px/1.5 var(--serif); }
+.music-symbol { display: inline-grid; place-items: center; min-width: 16px; font: 20px/1 var(--serif); }
+.music-invitation:hover { color: #704f39; border-color: #977a55; }
+.music-caption { display: block; margin-top: 10px; color: #64705a; font: 500 8px/1.7 var(--sans); letter-spacing: .13em; }
+.birthday-audio { display: block; width: min(290px,100%); height: 40px; margin: 10px auto; }
+.music-toggle { position: fixed; left: 20px; bottom: max(18px,env(safe-area-inset-bottom)); z-index: 100; display: flex; align-items: center; gap: 8px; min-height: 42px; max-width: 170px; padding: 11px 14px; border: 1px solid #d8d4c7; border-radius: 40px; background: #fffdf5f2; color: #3c4933; box-shadow: 0 4px 13px #3b3d2920; backdrop-filter: blur(10px); font: 11px/1.2 var(--sans); }
+.music-toggle[data-state=playing] { border-color: #97a17e; background: #f2f5e8f5; }
+.music-toggle[data-state=error] { border-color: #a68562; }
+.music-feedback { max-width: 310px; margin: 12px auto 0; color: #77503e; font: 13px/1.6 var(--sans); }
+.footer-note { max-width: 350px; text-align: right; }
+.music-credits { margin-top: 12px; color: #71624f; font: 11px/1.7 var(--sans); }
+.music-credits summary { cursor: pointer; text-underline-offset: 3px; }
+.music-credits p { margin-top: 10px; }
+.music-credits a { text-decoration: underline; text-underline-offset: 3px; }
+@media(max-width:760px) {
+  .music-invitation-wrap { margin-top: 20px; }
+  .music-invitation { font-size: 15px; }
+  .music-caption { font-size: 7px; }
+  .music-toggle { left: 14px; bottom: max(16px,env(safe-area-inset-bottom)); padding: 10px 12px; font-size: 10px; min-height: 38px; max-width: 150px; gap: 6px; }
+  .music-toggle .music-symbol { font-size: 18px; min-width: 14px; }
+  .footer-note { text-align: left; margin-top: 19px; font-size: 11px; }
+}

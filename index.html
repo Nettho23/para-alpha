@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#edf0df">
+  <meta name="description" content="Un jardín, un pequeño safari y una carta para Alpha Hefzi-ba. Feliz cumpleaños, con mucho cariño de Jaf.">
+  <title>Para Alpha · Un paseo hecho para ti</title>
+  <link rel="icon" href="assets/flower.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css?v=savanna-9">
+  <link rel="stylesheet" href="botanical.css?v=savanna-9">
+  <link rel="stylesheet" href="savanna.css?v=savanna-9">
+  <link rel="stylesheet" href="music.css?v=mananitas-11">
+  <script src="photos.js?v=savanna-9" defer></script>
+  <script src="botanical.js?v=savanna-9" defer></script>
+  <script src="savanna.js?v=savanna-9" defer></script>
+  <script src="garden.js?v=savanna-9" defer></script>
+  <script src="app.js?v=savanna-9" defer></script>
+  <script src="music.js?v=mananitas-11" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#inicio">Ir al contenido</a>
+  <header class="site-header" data-reading-area>
+    <a class="brand" href="#inicio"><span class="brand-monogram">A.</span><span>PARA ALPHA<small>CON CARIÑO DE JAF</small></span></a>
+    <nav aria-label="Nuestro recorrido"><a href="#inicio">El jardín</a><a href="#safari">El safari</a><a href="#recuerdos" id="photos-link" hidden>Las fotos</a></nav>
+  </header>
+  <button class="motion-toggle" id="motion-toggle" aria-pressed="false" aria-label="Pausar las animaciones"><span aria-hidden="true">Ⅱ</span><span id="motion-label">Pausar movimiento</span></button>
+  <button class="music-toggle" id="music-toggle" type="button" data-music-control data-reading-area aria-controls="birthday-music" aria-pressed="false" aria-label="Reproducir Las Mañanitas" hidden><span class="music-symbol" aria-hidden="true">♪</span><span data-music-label>Las Mañanitas</span></button>
+  <main>
+    <div class="garden-chapter" id="living-garden">
+      <section class="garden-hero" id="inicio" aria-labelledby="hero-title">
+        <div class="garden-world" id="garden-scene" aria-hidden="true">
+          <div class="garden-daylight"></div>
+          <div class="garden-arch"><span></span></div>
+          <div class="garden-floor"></div>
+          <svg class="garden-path" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="path-tone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8f5ec"/><stop offset="1" stop-color="#e9e4d6"/></linearGradient></defs><path class="path-edge" d="M720 12C520 130 990 205 720 420"/><path class="path-surface" d="M720 12C520 130 990 205 720 420"/><path class="path-stones" d="M720 12C520 130 990 205 720 420"/></svg>
+          <div class="garden-mound mound-left"></div><div class="garden-mound mound-right"></div>
+          <div class="garden-vine vine-left"></div><div class="garden-vine vine-right"></div>
+          <div id="hero-plants" class="plant-layer"></div>
+        </div>
+        <div class="hero-copy" data-reading-area>
+          <p class="garden-eyebrow">UN JARDÍN PARA TI</p>
+          <p class="birthday-label">Feliz cumpleaños,</p>
+          <h1 id="hero-title">Alpha<br><em>Hefzi-ba.</em></h1>
+          <p class="hero-description">Hoy me hacía ilusión tener un detalle contigo.<br>Este paseo lo preparé pensando en ti.</p>
+          <a class="button garden-button" href="#flores">Pasear entre las peonías <span aria-hidden="true">↓</span></a>
+          <p class="handwritten hero-sign">Con mucho cariño, <span>Jaf</span></p>
+          <div class="music-invitation-wrap">
+            <button class="music-invitation" id="music-start" type="button" data-music-control aria-controls="birthday-music" aria-pressed="false" aria-label="Reproducir Las Mañanitas" hidden><span class="music-symbol" aria-hidden="true">♪</span><span data-music-label>Escuchar Las Mañanitas</span></button>
+            <audio id="birthday-music" class="birthday-audio" controls preload="none" src="assets/audio/las-mananitas.mp3" aria-label="Las Mañanitas, versión cantada breve"><a href="assets/audio/las-mananitas.mp3">Escuchar Las Mañanitas</a></audio>
+            <small class="music-caption">UNA VERSIÓN BREVE PARA TU DÍA</small>
+            <p class="music-feedback" id="music-feedback" role="status" aria-live="polite" hidden></p>
+          </div>
+        </div>
+      </section>
+      <section class="garden-notes page-width" id="flores" aria-labelledby="flower-heading">
+        <div class="garden-bed-floor" aria-hidden="true"></div>
+        <div id="border-plants" class="plant-layer" aria-hidden="true"></div>
+        <div class="garden-note-heading" data-reading-area><p class="chapter-label">ENTRE PEONÍAS</p><h2 id="flower-heading">Unas flores.<br><em>Unas palabras para ti.</em></h2><p>Toca la peonía que más te guste.<br>En cada una dejé una nota.</p></div>
+        <div class="flower-picking" data-reading-area>
+          <div class="flower-garden" role="group" aria-label="Peonías con mensajes de Jaf">
+            <button class="flower-choice" data-wish="0" aria-pressed="false" aria-controls="flower-message"><span class="living-peony"><span class="peony-stem" aria-hidden="true"></span><span class="peony-leaf leaf-one" aria-hidden="true"></span><span class="peony-leaf leaf-two" aria-hidden="true"></span><span class="peony-leaf leaf-three" aria-hidden="true"></span><img src="assets/peony-blush-3d-v3.png" width="1254" height="1254" alt="Peonía rosa"></span><span>La primera</span><small>LEER MI NOTA</small></button>
+            <button class="flower-choice" data-wish="1" aria-pressed="false" aria-controls="flower-message"><span class="living-peony"><span class="peony-stem" aria-hidden="true"></span><span class="peony-leaf leaf-one" aria-hidden="true"></span><span class="peony-leaf leaf-two" aria-hidden="true"></span><span class="peony-leaf leaf-three" aria-hidden="true"></span><img src="assets/peony-ivory-3d-v3.png" width="1254" height="1254" alt="Peonía marfil"></span><span>Otra para ti</span><small>LEER MI NOTA</small></button>
+            <button class="flower-choice" data-wish="2" aria-pressed="false" aria-controls="flower-message"><span class="living-peony"><span class="peony-stem" aria-hidden="true"></span><span class="peony-leaf leaf-one" aria-hidden="true"></span><span class="peony-leaf leaf-two" aria-hidden="true"></span><span class="peony-leaf leaf-three" aria-hidden="true"></span><img src="assets/peony-rose-3d-v3.png" width="1254" height="1254" alt="Peonía rosada"></span><span>Y esta también</span><small>LEER MI NOTA</small></button>
+          </div>
+          <div class="flower-message" id="flower-message" role="status" aria-live="polite" aria-atomic="true"><span aria-hidden="true">♡</span><p>Hay una nota para ti en cada flor.<br>Elige la que más te guste.</p></div>
+        </div>
+        <a class="next-chapter" href="#safari"><span>¿Seguimos? La jirafa ya se adelantó.</span><b aria-hidden="true">↓</b></a>
+      </section>
+    </div>
+
+    <div class="safari-chapter" id="living-savanna">
+      <section class="safari-hero" id="safari" aria-labelledby="safari-heading">
+        <div class="savanna-world safari-scene">
+          <div class="savanna-light" aria-hidden="true"></div>
+          <div class="savanna-sun" aria-hidden="true"></div>
+          <div class="savanna-horizon" aria-hidden="true"><span></span><span></span></div>
+          <div class="savanna-ground" aria-hidden="true"></div>
+          <div class="savanna-earth earth-left" aria-hidden="true"></div>
+          <div class="savanna-earth earth-right" aria-hidden="true"></div>
+          <svg class="savanna-trail" viewBox="0 0 1440 430" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="savanna-trail-color" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4ecd9"/><stop offset="1" stop-color="#f3ecdf"/></linearGradient></defs><path class="trail-border" d="M855 -20C555 95 990 165 770 285S630 380 680 460"/><path class="trail-sand" d="M855 -20C555 95 990 165 770 285S630 380 680 460"/><path class="trail-grain" d="M855 -20C555 95 990 165 770 285S630 380 680 460"/></svg>
+          <div class="savanna-trees" id="savanna-trees" aria-hidden="true"></div>
+          <div class="safari-animals" role="group" aria-label="Nuestros compañeros del safari">
+            <figure class="safari-animal elephant"><button type="button" class="animal-touch" data-animal="elephant" aria-label="Saludar al elefantito" aria-describedby="safari-greeting"><img src="assets/elephant-v6.png" width="1254" height="1254" loading="lazy" decoding="async" alt=""></button></figure>
+            <figure class="safari-animal zebra"><button type="button" class="animal-touch" data-animal="zebra" aria-label="Saludar a la cebra" aria-describedby="safari-greeting"><img src="assets/zebra-v6.png" width="1254" height="1254" loading="lazy" decoding="async" alt=""></button></figure>
+          </div>
+          <div class="savanna-details" id="savanna-details" aria-hidden="true"></div>
+        </div>
+        <div class="safari-copy" data-reading-area>
+          <p class="chapter-label">UN PEQUEÑO SAFARI</p>
+          <h2 id="safari-heading">Dejé un lugar<br><em>para nosotros<br>por aquí.</em></h2>
+          <p>Entre tanto paseo, quería sentarme un ratito<br>contigo y decirte algo.</p>
+          <a class="button safari-button" id="open-surprise" href="#carta">Te escribí una carta <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="safari-greeting" data-reading-area><span aria-hidden="true">✧</span><p id="safari-greeting" role="status" aria-live="polite" aria-atomic="true">Toca a nuestros compañeros de paseo.</p></div>
+      </section>
+      <section class="letter-section page-width" id="carta" aria-labelledby="letter-heading">
+        <div class="savanna-margin" id="letter-savanna" aria-hidden="true"></div>
+        <div class="letter-aside" data-reading-area><p class="chapter-label">ESTA PARTE SÍ ES MUY MÍA</p><h2 id="letter-heading">Alpha,<br><em>quería que<br>lo supieras.</em></h2><p>No sabía muy bien por dónde empezar.<br>Así que empecé por lo que siento.</p><span class="letter-arrow" aria-hidden="true">↘</span><p class="handwritten">Ábrela con calma.<br>Me hacía ilusión escribirte.</p></div>
+        <div class="letter-wrap">
+          <button class="envelope" id="envelope" aria-expanded="false" aria-controls="letter-content">
+            <span class="envelope-paper" aria-hidden="true">Alpha, quería que lo supieras…</span><span class="envelope-back" aria-hidden="true"></span><span class="envelope-flap" aria-hidden="true"></span><span class="envelope-front" aria-hidden="true"></span><span class="wax-seal" aria-hidden="true">A</span><span class="envelope-recipient">Para Alpha Hefzi-ba</span><span class="envelope-sender">De Jaf, con mucho cariño.</span><span class="envelope-action">TOCA PARA ABRIR <span aria-hidden="true">↗</span></span>
+          </button>
+          <article class="letter-content" id="letter-content" data-reading-area hidden tabindex="-1" aria-label="Carta de Jaf para Alpha">
+            <div class="letter-top"><span>SOLO PARA TI</span><span aria-hidden="true">♡</span></div>
+            <h3>Alpha:</h3>
+            <p>Hoy quería hacerte algo que pudieras abrir despacito. Empecé pensando en las peonías, después apareció la jirafa y, entre una cosa y otra, me encontré buscando la manera de escribirte esto. Esta es la parte en la que más quería acertar.</p>
+            <p><strong>Soy muy feliz de haberte conocido, Alpha.</strong> A veces dejo las cosas bonitas en un «luego se lo digo», y contigo hoy me dieron ganas de decirlas. Me importas. Me da gusto que estés en mi vida y quería que lo leyeras con calma, sin tener que adivinarlo.</p>
+            <p>Y sí, <strong>eres muy linda.</strong> Mientras acomodaba tus fotos, volví a pensar en lo mucho que me gusta tu sonrisa. Me hace ilusión imaginar tu cara al abrir esta página; seguramente voy a querer preguntarte qué parte te gustó más. Yo creo que mi favorita va a ser saber que la viste.</p>
+            <p>Hay algo más que me gustaría: seguir conociéndote. Saber más de las cosas que te emocionan, de los planes que traes en la cabeza, de lo que te hace reír. Tener más motivos para decir «esto le gustaría a Alpha» y más oportunidades de tener detalles contigo. Eso sí me hace ilusión.</p>
+            <p><strong>Y tenemos muchos viajes pendientes, Alpha.</strong> Me ilusiona que esos planes vayan teniendo fecha: elegir a dónde ir, hacer la maleta y tomar las fotos que todavía nos faltan. Tengo ganas de compartir esos días contigo, de elegir dónde parar y de regresar con muchas cosas que recordar entre los dos.</p>
+            <p>Hoy ojalá comas algo que se te antoje muchísimo, te tomes fotos que te encanten y te rías a gusto. Que al terminar el día puedas pensar: «Sí, me la pasé bonito». Me gustaría que este ratito también cuente entre las cosas que te hicieron sentir querida.</p>
+            <p>Para este año que empiezas, deseo que tengas tiempo para lo que tú quieres. Para ese plan que has ido dejando, para probar algo que te da curiosidad o para descansar sin sentir que tienes que resolverlo todo. Y cuando tengas una buena noticia, me va a dar mucho gusto escuchártela contar.</p>
+            <p>Me gustó dedicarte este tiempo. Elegir tus fotos, poner las flores, escribir tu nombre y volver a leer estas palabras pensando en ti. <strong>Tenía muchas ganas de hacerte sentir especial hoy.</strong> Espero que al llegar hasta aquí te hayas sentido un poquito acompañada por mí.</p>
+            <p class="letter-ending">Feliz cumpleaños, Alpha.<br><em>Qué bonito poder tener este detalle contigo.</em></p>
+            <div class="signature">Con mucho cariño,<strong>Jaf</strong><span aria-hidden="true">♡</span></div>
+            <button class="text-button" id="close-letter">Guardar mi carta <span aria-hidden="true">↗</span></button>
+          </article>
+        </div>
+      </section>
+      <section class="wish-stop page-width" id="deseo" aria-labelledby="wish-heading">
+        <div class="savanna-margin" id="wish-savanna" aria-hidden="true"></div>
+        <div class="wish-stone" aria-hidden="true">✦</div>
+        <div class="wish-copy" data-reading-area><p class="chapter-label">ANTES DE SEGUIR</p><h2 id="wish-heading">¿Qué te gustaría<br><em>que pasara este año?</em></h2><p id="wish-instruction">Piénsalo un momentito. Ese deseo es solo tuyo.</p><button class="button safari-button" id="make-wish">Ya lo pensé <span aria-hidden="true">✦</span></button><div class="birthday-message" id="birthday-message" role="status" aria-live="polite" hidden><p>Ojalá un día me cuentes, muy contenta,<br>que eso que pensaste sí pasó.</p><button class="text-button" id="celebrate-again">Un poquito más de flores <span aria-hidden="true">✿</span></button></div></div>
+      </section>
+    </div>
+
+    <section class="memories page-width" id="recuerdos" aria-labelledby="memories-heading" hidden>
+      <div class="memory-heading" data-reading-area><div><p class="chapter-label">ÚLTIMA PARADA · TUS FOTOS</p><h2 id="memories-heading">Y al final,<br><em>tenías que estar tú.</em></h2></div><p>Guardé estas fotos para cerrar el paseo.<br>Me gustó irlas eligiendo para ti.<span class="handwritten">Puedes abrirlas una por una. ↙</span></p></div>
+      <div class="album-table"><div class="photo-grid" id="photo-grid"></div></div>
+      <div class="album-sign" data-reading-area><span aria-hidden="true">♡</span><p>Tenemos muchos viajes pendientes.<br><em>Y me hace ilusión vivirlos contigo.</em></p><strong>Jaf</strong><small>FELIZ CUMPLEAÑOS, ALPHA.</small></div>
+    </section>
+  </main>
+  <footer><a href="#inicio">Volver al jardín <span aria-hidden="true">↑</span></a><div class="footer-note"><span>Para Alpha Hefzi-ba, de parte de Jaf.</span><details class="music-credits"><summary>Créditos de la música</summary><p>«Las Mañanitas»: voz de Elisa y mezcla de Kenmayer, para Educational Options, Inc. <a href="https://commons.wikimedia.org/wiki/File:Las_Mananitas.ogg" target="_blank" rel="noopener noreferrer">Grabación original</a>, bajo licencia <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>. Convertida a MP3; esta versión de audio conserva la misma licencia.</p></details></div></footer>
+  <dialog id="photo-dialog" aria-label="Fotografía ampliada"><div class="dialog-top"><span id="photo-count"></span><button id="close-photo" aria-label="Cerrar fotografía">Cerrar ×</button></div><img id="large-photo" alt=""><div class="dialog-bottom"><button id="previous-photo" aria-label="Foto anterior">←</button><p id="photo-caption"></p><button id="next-photo" aria-label="Foto siguiente">→</button></div></dialog>
+  <canvas id="flower-rain" aria-hidden="true"></canvas>
+  <div id="roaming-giraffe" aria-hidden="true" hidden><canvas id="giraffe-walk"></canvas></div>
+  <canvas id="petals" aria-hidden="true"></canvas>
+  <noscript><style>.envelope{display:none}.letter-content[hidden]{display:block!important}.motion-toggle,.flower-garden,.flower-message,#make-wish{display:none}</style></noscript>
+</body>
+</html>

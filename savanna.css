@@ -1,0 +1,172 @@
+/* Una sabana continua: el suelo, las acacias y los animales son piezas independientes. */
+:root {
+  --savanna-paper: #f8f3e9;
+  --savanna-sand: #f0e7d9;
+  --savanna-ink: #4b3c2c;
+}
+.safari-chapter { overflow: hidden; border-top: 0; background: var(--savanna-sand); }
+.safari-hero {
+  position: relative;
+  display: block;
+  min-height: 920px;
+  margin: 0;
+  padding: 90px 12% 370px;
+  overflow: visible;
+  isolation: auto;
+  clip-path: none;
+  background: var(--savanna-paper);
+}
+.savanna-world {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transform-style: preserve-3d;
+  transform-origin: 50% 75%;
+  transform: perspective(1800px) translateY(var(--scene-shift,0px)) rotateX(var(--turn-x,0deg)) rotateY(var(--turn-y,0deg));
+  transition: transform .9s ease-out;
+  pointer-events: none;
+}
+.savanna-light {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,#fbfaf6,transparent 19%),radial-gradient(ellipse at 70% 42%,#f8e9c66b,transparent 54%),var(--savanna-paper);
+}
+.savanna-sun {
+  position: absolute;
+  right: 17%;
+  bottom: 490px;
+  width: 82px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 30%,#f7e5bd,#e8c890);
+  box-shadow: 0 0 75px 25px #ecd3a02b,inset 2px 4px 10px #fff5d899;
+  opacity: .7;
+}
+.savanna-horizon { position: absolute; bottom: 200px; left: -6%; width: 112%; height: 200px; }
+.savanna-horizon span { position: absolute; bottom: 0; width: 70%; height: 100%; border-radius: 65% 80% 0 0; background: linear-gradient(180deg,#ddd4b5bb,#eee4d0); }
+.savanna-horizon span:first-child { left: -12%; transform: rotate(3deg); }
+.savanna-horizon span:last-child { right: -13%; height: 82%; background: linear-gradient(180deg,#cbd0b27a,#e7dfc9); transform: rotate(-3deg); }
+.savanna-ground { position: absolute; bottom: -22px; left: -6%; width: 112%; height: 330px; background: radial-gradient(ellipse at 15% 25%,#d9c9a49c,transparent 48%),radial-gradient(ellipse at 85% 44%,#c9bc956b,transparent 43%),linear-gradient(180deg,#e9dfc6,var(--savanna-sand) 95%); border-radius: 48% 48% 0 0 / 16% 16% 0 0; }
+.savanna-earth { position: absolute; bottom: 110px; width: 40%; height: 100px; border-radius: 50%; background: radial-gradient(ellipse at 40% 15%,#d9c7a2,#c8b48b 80%); box-shadow: inset 3px 8px 13px #efe0bf88,0 15px 25px #a48c6121; transform: rotateX(58deg); opacity: .56; }
+.earth-left { left: -15%; }
+.earth-right { right: -17%; bottom: 155px; }
+.savanna-trail { position: absolute; bottom: -10px; left: 0; width: 100%; height: 350px; overflow: visible; }
+.savanna-trail path { fill: none; stroke-linecap: round; }
+.trail-border { stroke: #cfbea05c; stroke-width: 113; }
+.trail-sand { stroke: url(#savanna-trail-color); stroke-width: 109; }
+.trail-grain { stroke: #bba47f21; stroke-width: 99; stroke-dasharray: 1 29; }
+.savanna-trees,.savanna-details { position: absolute; inset: 0; pointer-events: none; }
+.savanna-trees { z-index: 2; }
+.savanna-acacia { position: absolute; transform-style: preserve-3d; }
+.acacia-left { left: -3%; bottom: 220px; width: 360px; height: 340px; }
+.acacia-right { right: -4%; bottom: 150px; width: 390px; height: 370px; }
+.acacia-distant { right: 20%; bottom: 285px; width: 135px; height: 151px; opacity: .55; }
+.acacia-horizon { left: 23%; bottom: 307px; width: 94px; height: 109px; opacity: .4; }
+.acacia-trunk { position: absolute; inset: 4% 0 0; width: 100%; height: 96%; overflow: visible; filter: drop-shadow(3px 3px 2px #806c4820); }
+.trunk-body { fill: #947a56; }
+.trunk-branch { fill: none; stroke: #947a56; stroke-width: 6; stroke-linecap: round; }
+.trunk-light { fill: none; stroke: #c4ab7f; stroke-width: 2.5; stroke-linecap: round; opacity: .72; }
+.acacia-shadow { position: absolute; bottom: -8px; left: 10%; width: 90%; height: 24px; border-radius: 50%; background: radial-gradient(ellipse,#685e3e30,transparent 70%); transform: rotate(-7deg); }
+.acacia-crown { position: absolute; top: 0; left: -3%; width: 106%; height: 38%; transform-origin: 50% 90%; animation: acacia-breeze 9s ease-in-out var(--tree-delay,0s) infinite paused; }
+.acacia-crown>span { position: absolute; background: radial-gradient(ellipse at 35% 20%,#b3b782,#8e9b64 48%,#67794c); border-radius: 55% 65% 42% 46%; box-shadow: inset 2px 4px 8px #e6e6b870,inset -3px -8px 12px #53603b2b,2px 5px 6px #5f684028; }
+.acacia-crown>span:nth-child(1) { left: 0; top: 25%; width: 46%; height: 62%; transform: rotate(-8deg) translateZ(4px); }
+.acacia-crown>span:nth-child(2) { right: 0; top: 18%; width: 51%; height: 67%; transform: rotate(8deg) translateZ(4px); }
+.acacia-crown>span:nth-child(3) { left: 23%; top: 2%; width: 52%; height: 81%; transform: translateZ(9px); }
+.acacia-crown>span:nth-child(4) { left: 18%; bottom: 2%; width: 65%; height: 45%; background: radial-gradient(ellipse at 45% 0%,#a4ae77,#7e905c 60%,#67764b); transform: translateZ(14px); }
+.acacia-right .acacia-crown>span { filter: saturate(.85); }
+.savanna-details { z-index: 5; }
+.savanna-grass { position: absolute; left: var(--grass-x); bottom: var(--grass-y); width: 1px; height: var(--grass-size); transform-origin: 50% 100%; animation: savanna-breeze 6s ease-in-out var(--grass-delay,0s) infinite paused; }
+.savanna-grass i { position: absolute; left: -2px; bottom: 0; width: 4px; height: var(--blade-length); border-radius: 90% 10% 0 0; background: linear-gradient(90deg,#8b955d,#b9bd83 55%,#91995f); transform-origin: 50% 100%; transform: rotate(var(--blade-angle)); box-shadow: 1px 1px 1px #756c3e14; }
+.savanna-grass.pale-grass i { background: linear-gradient(90deg,#a39764,#d1be8a 60%,#a39362); }
+.savanna-grass::after { content: ''; position: absolute; bottom: -3px; left: -11px; width: 25px; height: 4px; border-radius: 50%; background: #8b7a4826; filter: blur(2px); }
+.savanna-rock { position: absolute; left: var(--rock-x); bottom: var(--rock-y); width: var(--rock-width); height: calc(var(--rock-width) * .44); border-radius: 55% 47% 35% 40%; transform: rotate(var(--rock-turn)); background: radial-gradient(ellipse at 35% 18%,#e4d5b8,#b5a588 73%); box-shadow: inset 1px 2px 3px #fbefd48c,inset -2px -3px 3px #897a5a33,2px 4px 5px #806b4820; }
+.savanna-world .safari-animals { z-index: 4; overflow: visible; }
+.savanna-world .safari-animal.elephant { width: clamp(195px,20vw,280px); left: 15%; bottom: 62px; }
+.savanna-world .safari-animal.zebra { width: clamp(165px,17vw,240px); right: 15%; bottom: 126px; }
+.savanna-world .safari-animal::after { left: 24%; width: 55%; height: 8%; bottom: 7%; background: #80694438; filter: blur(6px); }
+.animal-touch { display: block; width: 100%; height: 100%; padding: 0; border: 0; border-radius: 42%; background: transparent; pointer-events: auto; transition: transform .5s ease; }
+.animal-touch:focus-visible { outline: 2px solid #7c6b49; outline-offset: 8px; }
+.animal-touch:hover { transform: translateY(-5px) rotate(-2deg); }
+.animal-touch.animal-greeting { animation: safari-hello 1.3s ease both; }
+.safari-hero .safari-copy { position: relative; z-index: 35; max-width: 600px; margin: 0 auto; padding: 0; text-align: center; background: transparent; isolation: isolate; }
+.safari-copy::before { content: ''; position: absolute; inset: -28px -36px; z-index: -1; pointer-events: none; background: radial-gradient(ellipse,var(--savanna-paper) 65%,#f8f3e9dd 81%,transparent 99%); }
+.safari-hero .safari-copy .chapter-label { color: #726044; font-size: 10px; letter-spacing: .23em; margin-bottom: 26px; }
+.safari-hero .safari-copy h2 { color: var(--savanna-ink); font-size: clamp(3.3rem,5.5vw,5rem); line-height: 1.1; letter-spacing: -.035em; }
+.safari-hero .safari-copy h2 em { color: #6a573c; }
+.safari-hero .safari-copy>p:not(.chapter-label) { color: #5f503d; font-size: 15px; line-height: 1.9; margin: 27px auto; }
+.safari-hero .button.safari-button { padding: 17px 25px; font-size: 12px; letter-spacing: .045em; border-radius: 2px; background: #69543b; border-color: #69543b; box-shadow: 0 6px 16px #69543b12; }
+.safari-greeting { position: absolute; left: 50%; bottom: 22px; width: min(420px,78%); min-height: 56px; transform: translateX(-50%); z-index: 35; text-align: center; color: #62543f; background: #f0e7d9f0; border-radius: 50%; padding: 6px 10px; }
+.safari-greeting>span { display: block; color: #9e885f; font-size: 18px; margin-bottom: 5px; }
+.safari-greeting p { font: italic 16px/1.55 var(--serif); }
+.safari-chapter .letter-section { background: radial-gradient(ellipse at -5% 90%,#d1c59f2b,transparent 22%),radial-gradient(ellipse at 105% 85%,#d1c59f35,transparent 20%),var(--savanna-sand); padding-top: 75px; }
+.safari-chapter .wish-stop { background: linear-gradient(var(--savanna-sand),#f5efe5); }
+.savanna-margin { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.savanna-margin .savanna-grass { opacity: .65; }
+.letter-aside,.letter-wrap,.wish-stone,.wish-copy { position: relative; }
+.animals-active .acacia-crown,.animals-active .savanna-grass { animation-play-state: running; }
+.reduce-motion .savanna-world { transform: none!important; }
+.reduce-motion .acacia-crown,.reduce-motion .savanna-grass,.page-hidden .acacia-crown,.page-hidden .savanna-grass,.page-hidden .animal-greeting { animation-play-state: paused!important; }
+@keyframes acacia-breeze { 0%,100% { transform: rotate(-.7deg); } 50% { transform: rotate(.7deg) translateX(2px); } }
+@keyframes savanna-breeze { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(6deg); } }
+@keyframes safari-hello { 0%,100% { transform: translateY(0) rotate(0); } 25% { transform: translateY(-9px) rotate(-4deg); } 55% { transform: translateY(-3px) rotate(3deg); } 78% { transform: translateY(-5px) rotate(-2deg); } }
+@media(min-width:1700px) {
+  .safari-hero { min-height: 980px; padding-top: 105px; }
+  .acacia-left { width: 440px; height: 390px; }
+  .acacia-right { width: 470px; height: 420px; }
+  .savanna-world .safari-animal.elephant { left: 20%; }
+  .savanna-world .safari-animal.zebra { right: 20%; }
+}
+@media(max-width:1100px) {
+  .safari-hero { min-height: 870px; padding: 78px 12% 365px; }
+  .safari-hero .safari-copy { max-width: 500px; }
+  .acacia-left { left: -10%; width: 320px; height: 305px; bottom: 225px; }
+  .acacia-right { right: -12%; width: 350px; height: 325px; bottom: 165px; }
+  .acacia-distant { right: 16%; width: 112px; height: 130px; bottom: 290px; }
+  .acacia-horizon { left: 21%; }
+  .savanna-sun { right: 11%; bottom: 460px; width: 65px; }
+  .savanna-world .safari-animal.elephant { left: 10%; }
+  .savanna-world .safari-animal.zebra { right: 9%; }
+}
+@media(max-width:760px) {
+  .safari-hero { display: block; min-height: 855px; padding: 64px 7% 420px; }
+  .safari-hero .safari-copy { width: 100%; max-width: 480px; margin: 0 auto; }
+  .safari-copy::before { inset: -23px -15px; background: radial-gradient(ellipse,var(--savanna-paper) 67%,#f8f3e9dc 84%,transparent); }
+  .safari-hero .safari-copy .chapter-label { font-size: 9px; letter-spacing: .2em; margin-bottom: 23px; }
+  .safari-hero .safari-copy h2 { font-size: clamp(2.7rem,10.6vw,4.4rem); line-height: 1.12; }
+  .safari-hero .safari-copy>p:not(.chapter-label) { font-size: 14px; line-height: 1.8; max-width: 310px; margin: 25px auto; }
+  .safari-hero .safari-copy>p br { display: none; }
+  .safari-hero .button.safari-button { font-size: 12px; padding: 16px 21px; }
+  .savanna-horizon { bottom: 215px; height: 130px; }
+  .savanna-ground { height: 310px; }
+  .savanna-trail { height: 300px; width: 150%; left: -25%; opacity: .82; }
+  .savanna-earth { width: 65%; height: 65px; bottom: 104px; }
+  .earth-left { left: -30%; }
+  .earth-right { right: -31%; bottom: 164px; }
+  .acacia-left { left: -105px; bottom: 244px; width: 270px; height: 225px; }
+  .acacia-right { right: -120px; bottom: 204px; width: 290px; height: 245px; }
+  .acacia-distant { right: 21%; bottom: 308px; width: 83px; height: 100px; }
+  .acacia-horizon { display: none; }
+  .savanna-sun { right: 13%; bottom: 415px; width: 48px; }
+  .savanna-world .safari-animal.elephant { width: clamp(143px,35vw,195px); left: 8%; bottom: 72px; }
+  .savanna-world .safari-animal.zebra { width: clamp(125px,30vw,165px); right: 5%; bottom: 159px; }
+  .savanna-grass { height: calc(var(--grass-size) * .8); }
+  .savanna-details .savanna-grass:nth-child(3n) { display: none; }
+  .savanna-rock { width: calc(var(--rock-width) * .8); height: calc(var(--rock-width) * .35); }
+  .savanna-details .savanna-rock:last-child { display: none; }
+  .safari-greeting { bottom: 20px; width: 78%; min-height: 56px; padding: 5px 6px; }
+  .safari-greeting p { font-size: 14px; line-height: 1.5; }
+  .safari-chapter .letter-section { padding-top: 53px; }
+  .savanna-margin .savanna-grass { opacity: .5; }
+}
+@media(max-width:400px) {
+  .safari-hero { min-height: 825px; padding-top: 57px; padding-bottom: 405px; }
+  .safari-hero .safari-copy h2 { font-size: 2.6rem; }
+  .acacia-left { left: -90px; width: 250px; height: 205px; }
+  .acacia-right { right: -105px; width: 270px; height: 222px; }
+  .savanna-world .safari-animal.elephant { left: 4%; }
+  .savanna-world .safari-animal.zebra { right: 2%; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .savanna-world { transform: none!important; }
+  .acacia-crown,.savanna-grass,.animal-touch { animation: none!important; transition: none!important; }
+}
